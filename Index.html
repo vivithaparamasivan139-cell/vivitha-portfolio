@@ -1,0 +1,908 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Vivitha Sri | Portfolio</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #0b0f19;
+        color: white;
+    }
+
+    /* NAVBAR */
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 18px 8%;
+
+        background: #0b0f19;
+        border-bottom: 1px solid #242a3a;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #8b5cf6;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        color: #8b5cf6;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 90vh;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 80px 8%;
+        gap: 50px;
+    }
+
+    .hero-text {
+        max-width: 650px;
+    }
+
+    .small-title {
+        color: #8b5cf6;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        margin: 15px 0;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+        color: #c4c7d1;
+    }
+
+    .hero p {
+        margin-top: 20px;
+        color: #a8adbb;
+        line-height: 1.8;
+    }
+
+    .buttons {
+        margin-top: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+
+        padding: 12px 24px;
+        margin-right: 10px;
+
+        border-radius: 8px;
+
+        background: #8b5cf6;
+        color: white;
+
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 1px solid #8b5cf6;
+    }
+
+
+    /* PROFILE */
+
+    .profile {
+        width: 280px;
+        height: 280px;
+
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: #161b2b;
+        border: 3px solid #8b5cf6;
+
+        font-size: 70px;
+        font-weight: bold;
+
+        color: #8b5cf6;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        padding: 90px 8%;
+    }
+
+    .title {
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+
+    .title::after {
+        content: "";
+
+        display: block;
+
+        width: 60px;
+        height: 4px;
+
+        background: #8b5cf6;
+
+        margin-top: 10px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 50px;
+    }
+
+    .about p {
+        color: #b4b8c5;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .info {
+        background: #121827;
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .info div {
+        margin-bottom: 20px;
+    }
+
+    .info strong {
+        display: block;
+        color: #8b5cf6;
+    }
+
+
+    /* SKILLS */
+
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .skill {
+        background: #121827;
+        padding: 25px;
+
+        border-radius: 12px;
+
+        border: 1px solid #252b3d;
+
+        transition: 0.3s;
+    }
+
+    .skill:hover {
+        transform: translateY(-5px);
+        border-color: #8b5cf6;
+    }
+
+    .skill h3 {
+        margin-bottom: 10px;
+    }
+
+    .skill p {
+        color: #a8adbb;
+    }
+
+
+    /* PROJECTS */
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .project {
+        background: #121827;
+
+        padding: 30px;
+
+        border-radius: 15px;
+
+        border: 1px solid #252b3d;
+
+        transition: 0.3s;
+    }
+
+    .project:hover {
+        transform: translateY(-7px);
+        border-color: #8b5cf6;
+    }
+
+    .project-number {
+        color: #8b5cf6;
+        font-weight: bold;
+    }
+
+    .project h3 {
+        margin: 15px 0;
+        font-size: 22px;
+    }
+
+    .project p {
+        color: #a8adbb;
+        line-height: 1.7;
+    }
+
+    .tech {
+        margin-top: 20px;
+    }
+
+    .tech span {
+        display: inline-block;
+
+        padding: 6px 10px;
+
+        margin: 4px;
+
+        border-radius: 5px;
+
+        background: #20263a;
+
+        font-size: 12px;
+    }
+
+
+    /* EDUCATION */
+
+    .education {
+        background: #121827;
+
+        padding: 30px;
+
+        border-radius: 15px;
+
+        border-left: 4px solid #8b5cf6;
+    }
+
+    .education h3 {
+        margin-bottom: 8px;
+    }
+
+    .education p {
+        color: #a8adbb;
+        margin: 5px 0;
+    }
+
+
+    /* CERTIFICATIONS */
+
+    .certifications {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 20px;
+    }
+
+    .certificate {
+        background: #121827;
+
+        padding: 25px;
+
+        border-radius: 12px;
+
+        border: 1px solid #252b3d;
+    }
+
+    .certificate h3 {
+        margin-bottom: 8px;
+    }
+
+    .certificate p {
+        color: #8b5cf6;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        text-align: center;
+
+        background: #121827;
+
+        padding: 50px;
+
+        border-radius: 20px;
+    }
+
+    .contact p {
+        color: #a8adbb;
+    }
+
+    .contact-links {
+        margin-top: 25px;
+    }
+
+    .contact-links a {
+        display: inline-block;
+
+        margin: 8px;
+
+        padding: 10px 18px;
+
+        border: 1px solid #8b5cf6;
+
+        border-radius: 7px;
+
+        color: white;
+
+        text-decoration: none;
+    }
+
+    .contact-links a:hover {
+        background: #8b5cf6;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        text-align: center;
+
+        padding: 30px;
+
+        border-top: 1px solid #242a3a;
+
+        color: #777d8c;
+    }
+
+
+    /* MOBILE */
+
+    @media(max-width: 768px) {
+
+        nav ul {
+            display: none;
+        }
+
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+        }
+
+        .profile {
+            width: 220px;
+            height: 220px;
+            font-size: 55px;
+        }
+
+        .about {
+            grid-template-columns: 1fr;
+        }
+
+        .skills {
+            grid-template-columns: 1fr;
+        }
+
+        .projects {
+            grid-template-columns: 1fr;
+        }
+
+        .certifications {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+
+</head><body><!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        Vivitha<span>.</span>
+    </div>
+
+    <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#education">Education</a></li>
+
+        <li><a href="#certifications">Certificates</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <p class="small-title">
+            HELLO, I'M
+        </p>
+
+        <h1>
+            Vivitha Sri
+        </h1>
+
+        <h2>
+            Computer Science & Data Analytics Student
+        </h2>
+
+        <p>
+            I am a passionate Computer Science student interested
+            in Software Development, Data Analytics and building
+            practical technology solutions.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile">
+        VS
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="title">
+        About Me
+    </h2>
+
+    <div class="about">
+
+        <div>
+
+            <p>
+                I am currently pursuing my Bachelor's degree in
+                Computer Science with Data Analytics at KPR College
+                of Arts and Science.
+            </p>
+
+            <p>
+                I am interested in Java programming, Python,
+                Data Analytics, Database Management and
+                software development.
+            </p>
+
+            <p>
+                I enjoy learning new technologies and creating
+                projects that solve real-world problems.
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <div>
+                <strong>Degree</strong>
+                BSc Computer Science with Data Analytics
+            </div>
+
+            <div>
+                <strong>College</strong>
+                KPR College of Arts and Science
+            </div>
+
+            <div>
+                <strong>Graduation</strong>
+                2027
+            </div>
+
+            <div>
+                <strong>Career Interest</strong>
+                Software Development & Data Analytics
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="title">
+        Skills
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>Java</h3>
+            <p>
+                Core Java, OOP, Arrays, Strings and Problem Solving
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Python</h3>
+            <p>
+                Python Programming, Pandas and NumPy
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Data Analytics</h3>
+            <p>
+                Data Cleaning, Analysis and Visualization
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>SQL / MySQL</h3>
+            <p>
+                Database concepts and SQL queries
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Web Development</h3>
+            <p>
+                HTML, CSS, JavaScript and React
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Data Visualization</h3>
+            <p>
+                Excel, Tableau, Power BI and DAX
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="title">
+        Featured Projects
+    </h2>
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                Smart Loom Performance &
+                Downtime Analytics System
+            </h3>
+
+            <p>
+                A desktop-based analytics system designed for
+                textile power loom industries to monitor machine
+                performance, production efficiency and downtime.
+            </p>
+
+            <div class="tech">
+
+                <span>Python</span>
+                <span>SQLite</span>
+                <span>Data Analytics</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                Tamil Handwritten OCR / ICR System
+            </h3>
+
+            <p>
+                An AI-based project focused on recognizing and
+                processing handwritten Tamil characters.
+            </p>
+
+            <div class="tech">
+
+                <span>Python</span>
+                <span>AI</span>
+                <span>OCR</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                Sentiment Analysis
+            </h3>
+
+            <p>
+                A Python-based project that analyzes text data
+                and identifies sentiment using data processing
+                and visualization techniques.
+            </p>
+
+            <div class="tech">
+
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Matplotlib</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>
+                College Assignment Submission Tracker
+            </h3>
+
+            <p>
+                A React-based application for managing college
+                assignments, deadlines and submission status.
+            </p>
+
+            <div class="tech">
+
+                <span>React</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="title">
+        Education
+    </h2>
+
+    <div class="education">
+
+        <h3>
+            BSc Computer Science with Data Analytics
+        </h3>
+
+        <p>
+            KPR College of Arts and Science
+        </p>
+
+        <p>
+            2024 - 2027
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <h2 class="title">
+        Certifications
+    </h2>
+
+    <div class="certifications">
+
+        <div class="certificate">
+
+            <h3>Java Basic</h3>
+
+            <p>HackerRank</p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Python Programming</h3>
+
+            <p>360 DigiTMG</p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Data Analytics</h3>
+
+            <p>360 DigiTMG</p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Data Visualization</h3>
+
+            <p>360 DigiTMG</p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Advanced Excel</h3>
+
+            <p>360 Digitech</p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Tableau Data Visualization</h3>
+
+            <p>Certification</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="title">
+        Let's Connect
+    </h2>
+
+    <div class="contact">
+
+        <p>
+            Interested in collaborating, learning and
+            exploring new opportunities.
+        </p>
+
+        <div class="contact-links">
+
+            <!-- CHANGE THESE LINKS -->
+
+            <a href="mailto:YOUR_EMAIL@gmail.com">
+                Email
+            </a>
+
+            <a href="https://github.com/YOUR_USERNAME"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/YOUR_USERNAME"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Vivitha Sri | Portfolio
+    </p>
+
+</footer>
+
+</body>
+  </html>
